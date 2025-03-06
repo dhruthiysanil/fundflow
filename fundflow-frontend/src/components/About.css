@@ -1,0 +1,374 @@
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+  margin-bottom: 4rem;
+}
+
+.about-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-title {
+  color: #592594;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+/* Scrolling Images Section */
+.scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-bottom: 4rem;
+  display: flex;
+  gap: 20px;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin: 4rem 0;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.faq-question {
+  background-color: #592594;
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+}
+
+.faq-answer {
+  background: white;
+  padding: 1.5rem;
+  color: #666;
+  line-height: 1.6;
+  border: 1px solid #eee;
+}
+
+/* Quotes Section */
+.quotes-section {
+  background: #f8f9fa;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.quotes-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.quote-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  color: #333;
+  font-style: italic;
+}
+
+.quote-author {
+  margin-top: 2rem;
+}
+
+.author-name {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.author-title {
+  color: #666;
+}
+/* Previous styles remain the same... */
+
+/* Mission Section */
+.mission-section {
+  text-align: center;
+  padding: 4rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mission-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.mission-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #8b1f4b;
+}
+
+.mission-heading {
+  font-size: 1.75rem;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.mission-text {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Scrolling Images */
+.image-scroll-container {
+  width: 100%;
+  overflow: hidden;
+  margin: 2rem 0 4rem;
+  background: #f8f9fa;
+  padding: 2rem 0;
+}
+
+.image-scroll-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  width: fit-content;
+}
+
+.scroll-image-wrapper {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+}
+
+.scroll-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.image-scroll-container:hover .image-scroll-track {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .mission-section {
+    padding: 2rem 1rem;
+  }
+
+  .mission-heading {
+    font-size: 1.5rem;
+  }
+
+  .mission-text {
+    font-size: 1rem;
+  }
+
+  .scroll-image {
+    width: 250px;
+    height: 166px;
+  }
+}
+
+/* Previous styles remain the same... */
+
+.better-section {
+  padding: 4rem 1rem;
+  background: white;
+}
+
+.better-title {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.better-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #333;
+}
+
+.better-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.better-card {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.better-card:hover {
+  transform: translateY(-4px);
+}
+
+.icon-wrapper {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+}
+
+.mint-icon {
+  filter: drop-shadow(0 4px 12px rgba(79, 209, 197, 0.3));
+}
+
+.better-card-title {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.better-card-text {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .better-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .better-section {
+    padding: 2rem 1rem;
+  }
+
+  .better-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .better-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .better-card {
+    padding: 2rem 1.5rem;
+  }
+}
+

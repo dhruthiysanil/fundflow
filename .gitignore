@@ -1,0 +1,55 @@
+# Node modules
+fundflow-frontend/node_modules/
+fundflow-backend/node_modules/
+
+# Lock files
+fundflow-frontend/package-lock.json
+fundflow-frontend/yarn.lock
+fundflow-frontend/pnpm-lock.yaml
+fundflow-backend/package-lock.json
+fundflow-backend/yarn.lock
+
+# Build outputs
+fundflow-frontend/dist/
+fundflow-frontend/.next/
+fundflow-frontend/out/
+fundflow-frontend/build/
+fundflow-backend/dist/
+fundflow-backend/build/
+
+# Logs
+fundflow-frontend/npm-debug.log*
+fundflow-frontend/yarn-debug.log*
+fundflow-frontend/yarn-error.log*
+fundflow-frontend/pnpm-debug.log*
+fundflow-frontend/lerna-debug.log*
+fundflow-backend/npm-debug.log*
+fundflow-backend/yarn-debug.log*
+fundflow-backend/pnpm-debug.log*
+fundflow-backend/lerna-debug.log*
+
+# OS and Editor files
+fundflow-frontend/.DS_Store
+fundflow-frontend/.idea/
+fundflow-frontend/.vscode/
+fundflow-frontend/*.swp
+fundflow-frontend/*.swo
+fundflow-frontend/Thumbs.db
+fundflow-backend/.DS_Store
+fundflow-backend/.idea/
+fundflow-backend/.vscode/
+fundflow-backend/*.swp
+fundflow-backend/*.swo
+fundflow-backend/Thumbs.db
+
+# Environment files
+fundflow-frontend/.env
+fundflow-frontend/.env.local
+fundflow-frontend/.env.development
+fundflow-frontend/.env.production
+fundflow-frontend/.env.test
+fundflow-backend/.env
+fundflow-backend/.env.local
+fundflow-backend/.env.development
+fundflow-backend/.env.production
+fundflow-backend/.env.test

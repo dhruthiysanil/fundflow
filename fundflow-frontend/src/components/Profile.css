@@ -1,0 +1,170 @@
+.profile-container {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-header h1 {
+    font-size: 1.5rem;
+    color: #4a5568;
+  }
+  
+  .header-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #4a5568;
+  }
+  
+  .form-section {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-header {
+    padding: 1rem;
+    background-color: #f7fafc;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .section-header h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4a5568;
+    margin: 0;
+  }
+  
+  .chevron-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #718096;
+  }
+  
+  .section-content {
+    padding: 1rem;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+  
+  .form-group label {
+    min-width: 180px;
+    color: #4a5568;
+    flex-shrink: 0;
+  }
+  
+  .input-container {
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+  }
+  
+  .phone-input {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .phone-input .phone-code {
+    width: 5rem;
+    background-color: #f7fafc;
+  }
+  
+  .file-input {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .file-input .file-name {
+    flex: 1;
+    background-color: #f7fafc;
+  }
+  
+  .choose-file-btn {
+    padding: 0.5rem 1rem;
+    background-color: #993366;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .choose-file-btn:hover {
+    background-color: #7a2952;
+  }
+  
+  .save-btn {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #993366;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    width: auto;
+  }
+  
+  .save-btn:hover {
+    background-color: #7a2952;
+  }
+  
+  /* Add focus styles */
+  input:focus,
+  button:focus {
+    outline: none;
+    border-color: #993366;
+    box-shadow: 0 0 0 3px rgba(153, 51, 102, 0.1);
+  }
+  
+  /* Add disabled styles */
+  input:disabled,
+  button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .form-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .form-group label {
+      margin-bottom: 0.5rem;
+    }
+  
+    .input-container {
+      width: 100%;
+    }
+  
+    .save-btn {
+      width: 100%;
+    }
+  }
+  
+  

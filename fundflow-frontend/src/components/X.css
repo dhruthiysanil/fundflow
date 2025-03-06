@@ -1,0 +1,208 @@
+.join-team-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+.content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.openings-button {
+  background-color: #4a2b6b;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.openings-button:hover {
+  background-color: #5d3a80;
+}
+
+.team-avatars {
+  position: relative;
+  height: 400px;
+}
+
+.avatar-container {
+  position: absolute;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.avatar-yellow {
+  background-color: #ffecc7;
+}
+
+.avatar-green {
+  background-color: #c7e8d0;
+}
+
+.avatar-pink {
+  background-color: #ffccd5;
+}
+
+.avatar-blue {
+  background-color: #c7e8ff;
+}
+
+.person-with-glasses {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ffecc7'/%3E%3Ccircle cx='50' cy='40' r='20' fill='%23333'/%3E%3Crect x='30' y='40' width='40' height='5' rx='2' fill='%23333'/%3E%3Crect x='30' y='40' width='5' height='15' rx='2' fill='%23333'/%3E%3Crect x='65' y='40' width='5' height='15' rx='2' fill='%23333'/%3E%3Crect x='40' y='60' width='20' height='5' rx='2' fill='%23333'/%3E%3C/svg%3E");
+}
+
+.person-with-dark-hair {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23c7e8d0'/%3E%3Ccircle cx='50' cy='40' r='20' fill='%23333'/%3E%3Crect x='40' y='60' width='20' height='5' rx='2' fill='%23333'/%3E%3C/svg%3E");
+}
+
+.person-with-curly-hair {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ffccd5'/%3E%3Ccircle cx='50' cy='40' r='20' fill='%23333'/%3E%3Cpath d='M40,60 Q50,70 60,60' stroke='%23333' stroke-width='5' fill='none'/%3E%3C/svg%3E");
+}
+
+.person-with-light-hair {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23c7e8ff'/%3E%3Ccircle cx='50' cy='40' r='20' fill='%23333'/%3E%3Cpath d='M40,60 Q50,65 60,60' stroke='%23333' stroke-width='5' fill='none'/%3E%3C/svg%3E");
+}
+
+.avatar-left {
+  left: 50px;
+  top: 100px;
+}
+
+.avatar-bottom {
+  left: 280px;
+  top: 300px;
+}
+
+.avatar-right-top {
+  right: 50px;
+  top: 100px;
+}
+
+.avatar-right-bottom {
+  right: 200px;
+  top: 250px;
+}
+
+.connecting-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.line {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 2;
+  stroke-dasharray: 5, 5;
+}
+
+.decorative-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.star, .icon {
+  position: absolute;
+  opacity: 0.5;
+  font-size: 20px;
+  color: #f20cfa;
+}
+.star-5 { top: 5%; left: 25%; }
+.star-6 { top: 45%; right: 20%; }
+.star-3 { bottom: 10%; left: 45%; }
+.star-4 { bottom: 20%; right: 15%; }
+
+.star-1 { top: 10%; left: 15%; }
+.star-2 { top: 20%; right: 20%; }
+.star-3 { bottom: 30%; left: 25%; }
+.star-4 { bottom: 20%; right: 15%; }
+
+.icon-1 { top: 15%; right: 30%; }
+.icon-2 { top: 40%; left: 10%; }
+.icon-3 { bottom: 35%; right: 10%; }
+.icon-4 { bottom: 15%; left: 30%; }
+.icon-5 { top: 30%; left: 40%; }
+
+.divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+  }
+  
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .avatar-image {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .avatar-left {
+    left: 20px;
+  }
+  
+  .avatar-right-top {
+    right: 20px;
+  }
+}

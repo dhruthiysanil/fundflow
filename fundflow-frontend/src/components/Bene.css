@@ -1,0 +1,284 @@
+.beneficiary-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  .beneficiary-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+  }
+  
+  .beneficiary-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .beneficiary-select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .option-label {
+    font-size: 13px;
+    color: #666;
+  }
+  
+  .subtitle {
+    color: #888;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .option-button {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  
+  .option-button:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .option-button.selected {
+    background-color: #592594;
+    color: white;
+    border-color: #592594;
+  }
+  
+  .option-button.full {
+    width: 100%;
+  }
+  
+  .option-button.half {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .icon {
+    font-style: normal;
+  }
+  
+  .ngo {
+    padding: 12px;
+  }
+  
+  .ngo-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  
+  .ngo-subtitle {
+    font-size: 13px;
+    color: #888;
+  }
+  
+  
+  .form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #592594;
+    margin: 24px -20px -20px -20px;
+    padding: 16px 20px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  .footer-button {
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+  
+  .footer-button:hover {
+    opacity: 0.9;
+  }
+  
+  .footer-button.close {
+    background: transparent;
+    color: white;
+    padding: 8px 16px;
+  }
+  
+  .footer-button.continue {
+    background: white;
+    color: #592594;
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 500px) {
+    .form-footer {
+      margin: 24px -16px -16px -16px;
+      padding: 16px;
+    }
+  }
+  
+  /* Make the component responsive */
+  @media (max-width: 600px) {
+    .beneficiary-card {
+      padding: 16px;
+    }
+  
+    .button-group {
+      flex-direction: column;
+    }
+  
+    .option-button.half {
+      width: 100%;
+    }
+  }
+  /* Previous styles remain the same... */
+
+.better-section {
+    padding: 4rem 1rem;
+    background: white;
+  }
+  
+  .better-title {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .better-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #333;
+  }
+  
+  .better-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .better-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .better-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .icon-wrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .mint-icon {
+    filter: drop-shadow(0 4px 12px rgba(79, 209, 197, 0.3));
+  }
+  
+  .better-card-title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  .better-card-text {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  @media (max-width: 1024px) {
+    .better-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .better-section {
+      padding: 2rem 1rem;
+    }
+  
+    .better-title {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+  
+    .better-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .better-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+  
+  
