@@ -1,0 +1,53 @@
+pages :
+
+
+DONATE TO CAMPAIGN ---->
+    title
+    image
+    goal
+    raised
+    num of supporters
+    story
+    updates
+    supporters list
+
+    !! PAYMENT  ---> select amount. go to payment gateway.
+
+
+START A FUNDRAISER --->
+
+    beneficiary drop down (myself, family, friend, other)   
+
+    beneficiary name
+    age
+    location
+    phone number
+
+    category
+    goal
+    date
+
+    upload photo
+    title
+    story
+
+    agree to all terms and conditions checkbox
+
+    done page
+
+
+
+PROFILE --->
+    add feedback button
+
+
+MY CAMPAIGNS PAGE ---->
+    list the user campaigns 
+    when clicked go to campaign page
+
+CAMPAIGN PAGE FOR CREATOR ---->
+    all campaign details like donate campaign page
+    create updates
+
+
+    
