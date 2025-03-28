@@ -24,6 +24,84 @@ class User {
             );
         });
     }
+
+
+    static async findById(userId) {
+        return new Promise((resolve, reject) => {
+            db.query(
+                "SELECT id, email, name, last_name, phone_number, pan_name, pan_number, address, country, state, city, pincode, profile_pic FROM users WHERE id = ?", 
+                [userId], 
+                (err, results) => {
+                    if (err) reject(err);
+                    resolve(results[0]);
+                }
+            );
+        });
+    }
+
+
+
+    static async updateUser(userId, userData) {
+        return new Promise((resolve, reject) => {
+            const {
+                fullName,
+                email,
+                phoneCode,
+                phoneNumber,
+                panNumber,
+                panName,
+                address,
+                country,
+                state,
+                city,
+                pincode,
+                profile_pic
+            } = userData;
+    
+            const sql = `
+                UPDATE users SET 
+                    name = ?, 
+                    email = ?, 
+                    phone_number = ?, 
+                    pan_number = ?, 
+                    pan_name = ?, 
+                    address = ?, 
+                    country = ?, 
+                    state = ?, 
+                    city = ?, 
+                    pincode = ?,
+                    profile_pic = ?
+                WHERE id = ?
+            `;
+    
+            const values = [
+                fullName, 
+                email, 
+                phoneNumber, 
+                panNumber, 
+                panName, 
+                address, 
+                country, 
+                state, 
+                city, 
+                pincode,
+                profile_pic, 
+                userId
+            ];
+            console.log(values)
+
+            console.log(sql)
+    
+            db.query(sql, values, (err, result) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(result.affectedRows > 0);
+                }
+            });
+        });
+    }
+    
 }
 
 module.exports = User;

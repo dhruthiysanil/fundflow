@@ -43,13 +43,13 @@ fundflow-backend/*.swo
 fundflow-backend/Thumbs.db
 
 # Environment files
-fundflow-frontend/.env
-fundflow-frontend/.env.local
-fundflow-frontend/.env.development
-fundflow-frontend/.env.production
-fundflow-frontend/.env.test
-fundflow-backend/.env
-fundflow-backend/.env.local
-fundflow-backend/.env.development
-fundflow-backend/.env.production
-fundflow-backend/.env.test
+# fundflow-frontend/.env
+# fundflow-frontend/.env.local
+# fundflow-frontend/.env.development
+# fundflow-frontend/.env.production
+# fundflow-frontend/.env.test
+# fundflow-backend/.env
+# fundflow-backend/.env.local
+# fundflow-backend/.env.development
+# fundflow-backend/.env.production
+# fundflow-backend/.env.test

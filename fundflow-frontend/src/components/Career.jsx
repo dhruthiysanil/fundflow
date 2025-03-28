@@ -1,7 +1,9 @@
 import "./Career.css"
 import { useState } from "react";
-
-
+import { AuthContext } from "../context/AuthContext";
+import i from "../components/i.jpg"
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 const Career = () => {
     const teamCards = [
@@ -129,6 +131,10 @@ const Career = () => {
 
 
     return (
+        <>
+      
+
+        <Header/>
         <div className="career-container">
             <section className="requirements-section">
                 <h1>What do we look for in candidate?</h1>
@@ -282,10 +288,18 @@ const Career = () => {
                         <p>Try adjusting your search criteria</p>
                     </div>
                 )}
+
+
+
             </div>
 
 
+
+
+
         </div>
+        <Footer/>
+        </>
     )
 }
 

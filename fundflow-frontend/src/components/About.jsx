@@ -3,6 +3,10 @@
 import { useState } from "react"
 import "./About.css"
 
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+
+
 const About = () => {
   const [openFaq, setOpenFaq] = useState(null)
 
@@ -41,13 +45,17 @@ const About = () => {
 
   // Corrected image paths
   const missionImages = [
-    "/images/i1.jpg",
-    "/images/i2.jpg",
-    "/images/i3.jpg",
-    "/images/i3.jpg",
-    "/images/i1.jpg",
-    "/images/i1.jpg",
-    "/images/i1.jpg",
+    
+    "./images/th1.jpg",
+    "./images/th2.jpg",
+    "./images/th3.jpg",
+    "./images/th4.jpg",
+    "./images/th5.jpg",
+    "./images/th6.jpg",
+    "./images/th8.jpg",
+    "./images/th9.jpg",
+    "./images/th.jpg",
+    "./images/th9.jpg",
   ]
   const betterCards = [
     {
@@ -71,6 +79,11 @@ const About = () => {
   ]
 
   return (
+   <>
+      
+
+      <Header/>
+
     <div className="about-container">
       <h2 className="about-title">Explore more about us</h2>
       <div className="about-grid">
@@ -210,8 +223,14 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+
+
+
+     
     
+    </div>
+    <Footer/>
+    </>
 
 
 

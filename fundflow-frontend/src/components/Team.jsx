@@ -3,6 +3,8 @@ import p from "../components/p.jpg";
 import p2 from "../components/p2.jpg";
 import p3 from "../components/p3.jpg";
 import p10 from "../components/p10.webp";
+import { Header } from "./Header";
+import { Footer } from "./Footer"
 const OurPeople = () => {
   const teamMembers = [
     { name: "Zack Hill", title: "Partner & CEO", email: "zack@few.io", image: p },
@@ -19,6 +21,8 @@ const OurPeople = () => {
   ];
 
   return (
+    <>
+    <Header/>
     <div className="our-people-container">
       <div className="our-people-header">
         <p className="we-are-few">WE ARE FEW</p>
@@ -62,6 +66,10 @@ const OurPeople = () => {
 
 
     </div>
+    <Footer/>
+    </>
+
+    
   );
 };
 

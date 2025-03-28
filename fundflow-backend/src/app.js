@@ -8,6 +8,16 @@ const authRoutes = require("./routes/authRoutes");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const cors = require('cors')
+const {authMiddleware} = require('./middleware/authMiddleware');
+
+const multer = require("multer");
+const { fileURLToPath } = require("url");
+const fs = require("fs");
+
+// ES module dirname equivalent
+// const __dirname = path.dirname(__filename)
+
+
 
 var app = express();
 
@@ -25,8 +35,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+const uploadsDir = path.join(__dirname, "uploads")
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true })
+}
+
+// Serve uploaded files statically
+app.use("/uploads", express.static(path.join(__dirname, "uploads")))
+
+app.use('/api',authMiddleware, indexRouter);
+// app.use('/users', usersRouter);
 app.use("/auth", authRoutes);
 
 // catch 404 and forward to error handler

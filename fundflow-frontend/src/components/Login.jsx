@@ -41,7 +41,7 @@ const Login = () => {
       if (data.token) {
         login(data.token);
         // alert('Login successful!');
-        navigate('/home');
+        navigate('/');
       }
     } catch (err) {
       console.error("Login error:", err.response);

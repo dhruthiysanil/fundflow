@@ -204,7 +204,7 @@
 }
 
 .heart-icon {
-  color: #ff6b6b;
+  color: #592594;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -297,6 +297,14 @@
   align-items: center;
 }
 
+.nav-grp {
+  /* padding: 20px 50px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:60px
+}
+
 .logo h1 {
   font-size: 24px;
   font-weight: bold;
@@ -321,23 +329,9 @@
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #ff6b6b;
+  color: #592594;
 }
 
-.donate-btn {
-  background: #ff6b6b;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.donate-btn:hover {
-  background: #ff5252;
-}
 
 .hero {
   display: grid;
@@ -368,7 +362,7 @@
 }
 
 .discover-btn {
-  background: #ff6b6b;
+  background: #592594;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -380,7 +374,7 @@
 }
 
 .discover-btn:hover {
-  background: #ff5252;
+  background: #592594;
 }
 
 .hero-image {
@@ -401,11 +395,8 @@
     gap: 10px;
   }
 
-  .main-nav {
-    padding: 15px 20px;
-    flex-direction: column;
-    gap: 15px;
-  }
+
+
 
   .nav-links {
     flex-direction: column;
@@ -486,7 +477,7 @@
 }
 
 .cause-card.coral::before {
-  background: #ff7f50;
+  background: #592594;
 }
 
 .cause-card.yellow::before {
@@ -659,10 +650,10 @@ body {
   font-weight: bold;
 }
 
-.main-nav {
+/* .main-nav {
   display: flex;
   gap: 30px;
-}
+} */
 
 .main-nav a {
   color: #333;
@@ -673,21 +664,22 @@ body {
 
 .main-nav a:hover,
 .main-nav a.active {
-  color: #e74c3c;
+  color: #592594;
 }
 
-.donate-btn {
-  background-color: #e74c3c;
+/* .donate-btn {
+  background-color: #592594;
   color: #fff;
+  border-radius: 4px;
   border: none;
   padding: 12px 24px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
-}
+} */
 
 .donate-btn:hover {
-  background-color: #c0392b;
+  background-color: #592594;
 }
 
 /* Hero Section */
@@ -723,7 +715,7 @@ body {
 }
 
 .discover-btn {
-  background-color: #f39c12;
+  background-color: #cb57fd;
   color: #fff;
   border: none;
   padding: 15px 30px;
@@ -734,7 +726,7 @@ body {
 }
 
 .discover-btn:hover {
-  background-color: #e67e22;
+  background-color: #592594;
 }
 
 /* Search Section */
@@ -945,7 +937,7 @@ body {
 }
 
 .heart-icon {
-  color: #ff6b6b;
+  color: #592594;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -1026,7 +1018,7 @@ body {
 }
 
 .donate-now-btn {
-  background: #ff6b6b;
+  background: #592594;
   color: white;
   border: none;
   padding: 12px 25px;
@@ -1037,7 +1029,7 @@ body {
 }
 
 .donate-now-btn:hover {
-  background: #ff5252;
+  background: #592594;
 }
 
 .donation-content {
@@ -1068,7 +1060,7 @@ body {
 
 .progress-bar {
   height: 100%;
-  background: #ff6b6b;
+  background: #592594;
   border-radius: 3px;
   transition: width 0.3s ease;
 }
@@ -1160,7 +1152,7 @@ body {
 }
 
 .read-more {
-  color: #ff6b6b;
+  color: #592594;
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
@@ -1168,7 +1160,7 @@ body {
 }
 
 .read-more:hover {
-  color: #ff5252;
+  color: #592594;
 }
 
 /* Footer */
@@ -1219,7 +1211,7 @@ body {
 }
 
 .footer-column ul a:hover {
-  color: #ff6b6b;
+  color: #592594;
 }
 
 .newsletter-form {
@@ -1239,7 +1231,7 @@ body {
 
 .newsletter-form button {
   padding: 10px 20px;
-  background: #ff6b6b;
+  background: #592594;
   color: white;
   border: none;
   border-radius: 4px;
@@ -1248,30 +1240,198 @@ body {
 }
 
 .newsletter-form button:hover {
-  background: #ff5252;
+  background: #592594;
 }
 
-.social-icons {
-  display: flex;
-  gap: 15px;
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.social-icons a {
-  color: white;
-  text-decoration: none;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: #333;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.hero-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  transition: background-color 0.3s;
+  align-items: flex-start;  /* Align everything to the top */
+  padding: 50px 20px;
+  width: 100%;
 }
 
-.social-icons a:hover {
-  background: #ff6b6b;
+.hero-grid {
+  display: flex;
+  flex-wrap: wrap;  /* Allow content to wrap */
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
 }
+
+.image-container {
+  flex: 1 1 40%;  /* Image takes 40% of the space */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  /* Align the image to the top */
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.content-container {
+  flex: 1 1 60%;  /* Content takes 60% of the space */
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: #2d3e50;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.highlight {
+  color: #592594;
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.cta-section {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.donate-button {
+  background-color: #592594;
+  color: white;
+  font-size: 1.1rem;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.donate-button:hover {
+  background-color: #592594;
+  transform: scale(1.05);
+}
+
+.donate-button:focus {
+  outline: none;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 2rem;
+  color: #592594;
+}
+
+.stat-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .donate-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+  .hero-grid {
+    flex-direction: column;  /* Stack items vertically on small screens */
+  }
+
+  .image-container {
+    flex: 1 1 100%;  /* Image takes full width */
+    margin-bottom: 20px;
+  }
+
+  .content-container {
+    flex: 1 1 100%;  /* Content takes full width */
+  }
+
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-item {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -1352,17 +1512,7 @@ body {
   overflow: hidden;
 }
 
-/* .testimonials-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-   background: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-01%20111828-cCskWoMxTfj1m1cqU4T9kaLQJYrpsg.png") center bottom no-repeat;
-  background-size: cover;
-  opacity: 0.1;
-} */
+
 
 .testimonials-container {
   max-width: 1200px;
