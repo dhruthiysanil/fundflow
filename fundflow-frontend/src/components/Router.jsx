@@ -15,8 +15,8 @@ import Dashboard from "./Dashboard";
 import Screen from "./Screen";
 import Team from "./Team";
 import How from "./How";
-
-import Feedback from "./Feed";
+import Pay from "./Pay";
+import Wig from "./Wig";
 // import Feedback from "./Feedback";
 // import {Footer} from "./Footer";
 
@@ -42,8 +42,8 @@ export default function App() {
           <Route exact path="/Browser" element={<Browser/>} />
           <Route exact path="/Career" element={<Career/>} />
           <Route exact path="/Donation" element={<Donation/>} />
-          
-          {/* <Route exact path="/Footer" element={<Footer/>} /> */}
+          <Route exact path="/Pay" element={<Pay/>} />
+          <Route exact path="/Wig" element={<Wig/>} />
           <Route exact path="/Team" element={<Team/>} />
         </Routes>
       </BrowserRouter>

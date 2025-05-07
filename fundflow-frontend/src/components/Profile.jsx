@@ -41,7 +41,7 @@ function Profile() {
 
         setFormData({
           fullName: userData.name || "",
-          lastName: userData.lastName || "",
+          last_name: userData.lastName || "",
           email: userData.email || "",
           phoneCode: userData.phoneCode || "91",
           phoneNumber: userData.phone_number || "",
@@ -66,6 +66,7 @@ function Profile() {
     if (isAuthenticated) {
       fetchUserDetails();
     }
+    
   }, [isAuthenticated]);
 
   if (!isAuthenticated) {
@@ -102,10 +103,6 @@ function Profile() {
       Object.keys(formData).forEach(key => {
         submitData.append(key, formData[key]);
       });
-
-      
-
-     
       // Append profile image if selected
       if (profileImage) {
         submitData.append('profileImage', profileImage);
@@ -267,3 +264,5 @@ function Profile() {
 }
 
 export default Profile;
+
+

@@ -7,15 +7,16 @@ const {
 
 const pool = require("../config/db2.js");
 
+// const paymentController = require("../controllers/paymentController");
 
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 
-
-
 router.get('/user', getUser);
 router.put('/update-user', updateUser);
+
+const { v4: uuidv4 } = require('uuid');
 
 
 
@@ -244,9 +245,6 @@ router.post("/create", upload.single("campaign_photo"), async (req, res) => {
         campaign_story,
       ],
     )
-
-
-
 
     const [campaign] = await pool.query(
       `SELECT c.*, cat.category_name 
@@ -570,6 +568,118 @@ router.get("/updates/:id", async (req, res) => {
 })
 
 
+
+
+router.post('/feedback', async (req, res) => {
+  const { text } = req.body;
+
+  // console.log(req)
+
+  const sql = `INSERT INTO feedback (content, user_id) VALUES (?, ?)`;
+
+  try {
+    await pool.query(sql, [text, req.user.userId]);
+    res.status(200).json({ message: 'Feedback submitted successfully' });
+  } catch (error) {
+    console.error('Error inserting feedback:', error);
+    res.status(500).json({ error: 'Error inserting feedback' });
+  }
+});
+
+
+
+// GET feedback with user info
+router.get('/feedback', async (req, res) => {
+  const sql = `
+    SELECT 
+      f.feedback_id AS id, 
+      f.content AS text, 
+      u.name, 
+      u.last_name,
+      u.profile_pic 
+    FROM 
+      feedback f
+    JOIN 
+      users u ON f.user_id = u.id
+    ORDER BY 
+      f.feedback_id DESC
+  `;
+
+  try {
+    const rows = await pool.query(sql);
+    res.status(200).json(rows);
+  } catch (error) {
+    console.error('Error fetching feedback:', error);
+    res.status(500).json({ error: 'Failed to fetch feedback' });
+  }
+});
+
+
+
+router.post('/payment', async (req, res) => {
+  const { amount, cardNumber, expiryDate, cvv, cardholderName, campaignId, note } = req.body;
+  const donorId = req.user.userId; // Replace with actual authenticated user ID (e.g., from middleware)
+  // const note = `Paid by ${cardholderName}`;
+  const transactionId = uuidv4(); // Random UUID for transaction ID
+
+  try {
+    // Insert into donations table
+    const donationSql = `
+      INSERT INTO donations (campaign_id, donor_id, amount, note) 
+      VALUES (?, ?, ?, ?)
+    `;
+    await pool.query(donationSql, [campaignId, donorId, amount, note]);
+
+    // Update raised amount in campaign table
+    const updateCampaignSql = `
+      UPDATE campaign 
+      SET raised_amount = raised_amount + ? 
+      WHERE campaign_id = ?
+    `;
+    await pool.query(updateCampaignSql, [amount, campaignId]);
+
+    res.status(200).json({
+      success: true,
+      message: 'Payment successful',
+      transactionId: transactionId
+    });
+  } catch (error) {
+    console.error('Payment error:', error);
+    res.status(500).json({ success: false, message: 'Payment failed' });
+  }
+});
+
+
+
+
+router.get("/my-donations", async (req, res) => {
+  const userId = req.user.userId;
+
+  const sql = `
+    SELECT 
+      d.id,
+      d.amount,
+      d.note,
+      d.campaign_id,
+      c.campaign_title AS title,
+      c.campaign_photo AS image
+    FROM donations d
+    JOIN campaign c ON d.campaign_id = c.campaign_id
+    WHERE d.donor_id = ?
+    ORDER BY d.donated_date DESC
+  `;
+
+
+
+  try {
+    const rows = await pool.query(sql, [userId]);
+    console.log(rows);
+    res.status(200).json(rows);
+  } catch (error) {
+    console.error("Error fetching user donations:", error);
+    res.status(500).json({ error: "Error fetching donation data" });
+  }
+});
 
 
 

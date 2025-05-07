@@ -302,10 +302,7 @@ body {
   pointer-events: none;
 }
 
-
-
 /* Update search input padding to accommodate the left icon */
-
 
 /* Enhanced search input focus state */
 .search-input:focus,
@@ -332,10 +329,6 @@ body {
 .search-input-focused {
   animation: pulse-border 2s infinite;
 }
-
-
-
-
 
 .refine-search:hover {
   background-color: #592594;
@@ -466,8 +459,6 @@ body {
     margin-left: 0;
   }
 }
-
-
 
 .search-result-item {
   display: flex;
@@ -865,11 +856,12 @@ body {
   margin-bottom: 15px;
 }
 
+/* Updated progress circle styles */
 .progress-circle {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: conic-gradient(#4caf50 var(--percentage), #f0f0f0 0);
+  background: #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -877,6 +869,21 @@ body {
   flex-shrink: 0;
 }
 
+/* Only show green progress when has-progress class is present */
+.progress-circle.has-progress {
+  background: conic-gradient(#4caf50 var(--percentage), #f0f0f0 0);
+}
+
+/* .percentage {
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+} */
 .percentage {
   background: white;
   width: 50px;
@@ -886,7 +893,11 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  font-size: 13px;
+  color: black; /* Font color set to black */
 }
+
+
 
 .stats-text {
   flex: 1;
@@ -924,4 +935,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-

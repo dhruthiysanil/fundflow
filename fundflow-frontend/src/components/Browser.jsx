@@ -301,7 +301,7 @@ const Browse = () => {
                   <h3>{campaign.campaign_title}</h3>
                   <div className="campaign-stats">
                     <div 
-                      className="progress-circle" 
+                      className={`progress-circle ${(campaign.percentage || 0) > 0 ? 'has-progress' : ''}`}
                       style={{ "--percentage": `${campaign.percentage || 0}%` }}
                     >
                       <span className="percentage">{campaign.percentage || 0}%</span>
@@ -318,7 +318,7 @@ const Browse = () => {
                     </div>
                   </div>
                   <div className="contribution-note">
-                    For every ₹100 you donate, Milaap will contribute ₹10 on your behalf.
+                    For every ₹100 you donate, FundFlow contribute ₹10 on your behalf.
                   </div>
                 </div>
               </div>

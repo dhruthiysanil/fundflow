@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.13.4",
+    "@lottiefiles/dotlottie-vue": "^0.6.2",
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
     "jwt-decode": "^4.0.0",

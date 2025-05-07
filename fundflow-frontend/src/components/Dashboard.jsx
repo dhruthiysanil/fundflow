@@ -13,6 +13,7 @@ const Dashboard = () => {
   const [storyContent, setStoryContent] = useState("");
   const [campaigns, setCampaigns] = useState([]);
   const [activeCampaign, setActiveCampaign] = useState(null)
+  const [donationData, setDonationData] = useState([]);
 
   const fundraiserData = {
     title: "Support Aditya 1160",
@@ -25,24 +26,24 @@ const Dashboard = () => {
     story: "This is the current story content."
   }
 
-  const donationData = [
-    {
-      id: 1,
-      title: "Support Bhabyalakshmi",
-      slug: "support-bhabyalakshmi",
-      image: "/placeholder.svg?height=200&width=350",
-      description: "My Mother Needs Your Help To Recover From Septic shock",
-      amount: 200,
-    },
-    {
-      id: 2,
-      title: "Help Ayaansh 12",
-      slug: "support-ayaansh-gupta-5",
-      image: "/placeholder.svg?height=200&width=350",
-      description: "Medical support for Ayaansh",
-      amount: 500,
-    },
-  ]
+  // const donationData = [
+  //   {
+  //     id: 1,
+  //     title: "Support Bhabyalakshmi",
+  //     slug: "support-bhabyalakshmi",
+  //     image: "/placeholder.svg?height=200&width=350",
+  //     description: "My Mother Needs Your Help To Recover From Septic shock",
+  //     amount: 200,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Help Ayaansh 12",
+  //     slug: "support-ayaansh-gupta-5",
+  //     image: "/placeholder.svg?height=200&width=350",
+  //     description: "Medical support for Ayaansh",
+  //     amount: 500,
+  //   },
+  // ]
 
 
   useEffect(() => {
@@ -56,17 +57,40 @@ const Dashboard = () => {
       }
     };
 
+    const fetchDonations = async () => {
+      try {
+        const response = await api.get(`/api/my-donations`);
+        setDonationData(response.data);
+      } catch (error) {
+        console.error("Error fetching donation data:", error);
+      }
+    };
+
+    fetchDonations();
     fetchCampaigns();
   }, []);
 
 
   useEffect(() => {
     // Replace with actual API call
-    fetch("/api/user") // Example endpoint
-      .then((res) => res.json())
-      .then((data) => setUserName(data.name))
-      .catch((error) => console.error("Error fetching user:", error));
+    // fetch("/api/user") // Example endpoint
+    //   .then((res) => res.json())
+    //   .then((data) => setUserName(data.name))
+    //   .catch((error) => console.error("Error fetching user:", error));
 
+
+
+    const fetchUser = async () => {
+      try {
+        const response = await api.get("/api/user");
+        console.log(response.data)
+        setUserName(response.data.name) // Update state with API response
+      } catch (err) {
+        toast.error(err.message); // Handle errors
+      }
+    };
+
+    fetchUser();
     // Initialize story content from fundraiserData
     // setStoryContent("");
   }, []);
@@ -127,7 +151,7 @@ const Dashboard = () => {
               <span>a</span>
             </div>
             <div className="profile-info">
-              <h1>adi's Dashboard</h1>
+              <h1>{userName}'s Dashboard</h1>
               <div className="profile-details">
                 <div className="detail-item">
                   <p className="detail-label">Latest Contribution:</p>
@@ -238,13 +262,13 @@ const Dashboard = () => {
                 <h2 className="donations-amount-title">You contributed</h2>
               </div>
 
-              <div className="donations-list">
+              {/* <div className="donations-list">
                 {donationData.map((donation) => (
                   <div className="donation-item" key={donation.id}>
                     <div className="donation-details">
                       <div className="donation-image-container">
-                        <img src={donation.image || "/placeholder.svg"} alt={donation.title} className="donation-image" />
                         <div className="donation-image-overlay">
+                        <img src={donation.image ? `http://localhost:5000${donation.image}` : "/placeholder.svg"} alt={donation.title} className="donation-image" />
                           <p>{donation.description}</p>
                         </div>
                       </div>
@@ -258,7 +282,37 @@ const Dashboard = () => {
                     </div>
                   </div>
                 ))}
+              </div> */}
+
+
+              <div className="donations-list">
+                {donationData.map((donation) => (
+                  <div className="donation-item" key={donation.id} style={{ border: "1px solid #ddd", borderRadius: "12px", padding: "16px", marginBottom: "20px", display: "flex", gap: "20px", alignItems: "center" }}>
+
+                    <img
+                      src={donation.image ? `http://localhost:5000${donation.image}` : "/placeholder.svg"}
+                      alt={donation.title}
+                      style={{ width: "100px", height: "100px", objectFit: "cover", borderRadius: "8px" }}
+                    />
+
+                    <div style={{ flexGrow: 1 }}>
+                      <h3 style={{ margin: "0", fontSize: "18px" }}>{donation.title}</h3>
+                      <p style={{ margin: "4px 0", fontSize: "14px", color: "#666" }}>
+                        <strong>Campaign ID:</strong> {donation.campaign_id}
+                      </p>
+                      <p style={{ margin: "4px 0", fontSize: "14px", color: "#444" }}>
+                        <strong>Note:</strong> {donation.note || "—"}
+                      </p>
+                    </div>
+
+                    <div style={{ minWidth: "80px", textAlign: "right" }}>
+                      <p style={{ fontWeight: "bold", fontSize: "16px" }}>₹{donation.amount}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
+
+
             </div>
           )}
         </div>

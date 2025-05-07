@@ -6,8 +6,11 @@ import i2 from "../components/i2.jpg"
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Header } from "./Header";
-import s from "../components/s.jpg"
+import s from "./s.jpg"
 import s2 from "../components/s2.jpg"
+import Feedback from "./Feedback"
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("")
   const [showMoreCategories, setShowMoreCategories] = useState(false)
@@ -37,6 +40,13 @@ const Home = () => {
     { id: 13, name: 'Women', icon: '👩' },
     { id: 14, name: 'Technology', icon: '💻' }
   ];
+  const navigate = useNavigate();
+
+const handleDonateNowClick = () => {
+  navigate("/Browser"); // Make sure this route is correct in your router config
+};
+
+
 
   useEffect(() => {
     if (isDropdownOpen && othersCardRef.current && dropdownRef.current) {
@@ -203,8 +213,6 @@ const Home = () => {
 
   return (
     <>
-      
-
  <Header/>
 
       <section className="hero">
@@ -215,7 +223,7 @@ const Home = () => {
             <br />
             get involved
           </h2>
-          <button className="discover-btn">DISCOVER MORE</button>
+
         </div>
         <div className="hero-image">
           <img src={i1 || "/placeholder.svg"} alt="Happy children showing peace signs" className="hero-img" />
@@ -225,7 +233,7 @@ const Home = () => {
         <div className="banner-content">
           <span className="megaphone-icon">📢</span>
           Our crowdfunding platform charges NO fees
-          <span className="percentage">0%</span>
+          
         </div>
       </div>
       <section className="search-section">
@@ -239,11 +247,6 @@ const Home = () => {
 
         </div>
       </section>
-
-
-
-
-
       <div className="hero-container">
       <div className="hero-grid">
         <div className="image-container left-image">
@@ -254,10 +257,6 @@ const Home = () => {
           <img src={s2} alt="Child playing with water" className="hero-image" />
         </div>
 
-        
-
-        
-        
         <div className="content-container">
           <h1 className="hero-title">
             Welcome to <span className="highlight">FundFlow</span> Please Raise Your Helping Hand
@@ -272,7 +271,9 @@ Join us in making a meaningful impact. Raise your helping hand today and be the 
           </p>
           
           <div className="cta-section">
-            <button className="donate-button">Donate Now</button>
+          <button className="donate-now-btn" onClick={handleDonateNowClick}>
+  Donate Now
+</button>
          
           </div>
           
@@ -294,14 +295,6 @@ Join us in making a meaningful impact. Raise your helping hand today and be the 
       </div>
     </div>
 
-    
-
-
-
-
-
-
-
       {/* {isDropdownOpen && (
         <div className="dropdown-menu" ref={dropdownRef}>
           {dropdownCategories.map(category => (
@@ -312,11 +305,6 @@ Join us in making a meaningful impact. Raise your helping hand today and be the 
           ))}
         </div>
       )} */}
-
-
-
-
-
 
       <section className="support-section">
         <div className="support-grid">
@@ -367,6 +355,9 @@ Join us in making a meaningful impact. Raise your helping hand today and be the 
         </div>
       </section>
 
+
+      <Feedback/>
+{/* 
       <section className="testimonials-section">
         <div className="testimonials-container">
           <h2>What people are saying about FundFlow</h2>
@@ -406,7 +397,7 @@ Join us in making a meaningful impact. Raise your helping hand today and be the 
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <footer className="footer">
         <div className="footer-content">
